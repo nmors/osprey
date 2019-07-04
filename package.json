@@ -16,7 +16,9 @@
     "lint": "standard",
     "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- -R spec --bail --require test/support/globals",
     "test-spec": "mocha -R spec --bail --require test/support/globals",
-    "test": "npm run lint && npm run test-cov"
+    "test": "npm run lint && npm run test-cov",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -66,7 +68,8 @@
     "request-error-handler": "^1.0.0",
     "type-is": "^1.5.5",
     "xtend": "^4.0.0",
-    "yargs": "^4.1.0"
+    "yargs": "^4.1.0",
+    "snyk": "^1.190.0"
   },
   "devDependencies": {
     "busboy": "^0.2.9",
@@ -82,5 +85,6 @@
     "pre-commit": "^1.0.5",
     "server-address": "^1.0.1",
     "standard": "^6.0.4"
-  }
+  },
+  "snyk": true
 }
